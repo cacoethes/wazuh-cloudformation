@@ -2,7 +2,7 @@
 # Install Kibana instance using Cloudformation template
 # Support for Amazon Linux
 
-set -exf
+#set -exf
 
 ssh_username=$(cat /tmp/wazuh_cf_settings | grep '^SshUsername:' | cut -d' ' -f2)
 ssh_password=$(cat /tmp/wazuh_cf_settings | grep '^SshPassword:' | cut -d' ' -f2)
@@ -32,11 +32,14 @@ sed -i 's|[#]*PasswordAuthentication no|PasswordAuthentication yes|g' /etc/ssh/s
 service sshd restart
 
 # Downloading and installing JRE
-url_jre="https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jre-8u191-linux-x64.rpm"
-jre_rpm="/tmp/jre-8-linux-x64.rpm"
-curl -Lo ${jre_rpm} --header "Cookie: oraclelicense=accept-securebackup-cookie" ${url_jre}
-rpm -qlp ${jre_rpm} > /dev/null 2>&1 || $(echo "Unable to download JRE. Exiting." && exit 1)
-yum -y localinstall ${jre_rpm} && rm -f ${jre_rpm}
+#url_jre="https://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jre-8u191-linux-x64.rpm"
+#jre_rpm="/tmp/jre-8-linux-x64.rpm"
+#curl -Lo ${jre_rpm} --header "Cookie: oraclelicense=accept-securebackup-cookie" ${url_jre}
+#rpm -qlp ${jre_rpm} > /dev/null 2>&1 || $(echo "Unable to download JRE. Exiting." && exit 1)
+#yum -y localinstall ${jre_rpm} && rm -f ${jre_rpm}
+
+yum -y install java-1.8.0-openjdk
+yum -y remove java-1.7.0-openjdk
 
 # Configuring Elastic repository
 rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
