@@ -731,8 +731,7 @@ Resources:
               owner: root
               group: root
             /tmp/wazuh_cf_elastic.sh:
-              source: !Sub >-
-                https://raw.githubusercontent.com/cacoethes/wazuh-cloudformation/master/elastic/wazuh_cf_elastic.sh
+              source: https://raw.githubusercontent.com/cacoethes/wazuh-cloudformation/master/elastic/wazuh_cf_elastic.sh
               mode: '000700'
               owner: root
               group: root
@@ -810,8 +809,7 @@ Resources:
               owner: root
               group: root
             /tmp/wazuh_cf_kibana.sh:
-              source: !Sub >-
-                https://raw.githubusercontent.com/cacoethes/wazuh-cloudformation/master/elastic/wazuh_cf_kibana.sh
+              source: https://raw.githubusercontent.com/cacoethes/wazuh-cloudformation/master/elastic/wazuh_cf_kibana.sh
               mode: '000700'
               owner: root
               group: root
@@ -889,8 +887,7 @@ Resources:
               owner: root
               group: root
             /tmp/wazuh_cf_master.sh:
-              source: !Sub >-
-                https://raw.githubusercontent.com/cacoethes/wazuh-cloudformation/master/wazuh/wazuh_cf_master.sh
+              source: https://raw.githubusercontent.com/cacoethes/wazuh-cloudformation/master/wazuh/wazuh_cf_master.sh
               mode: '000700'
               owner: root
               group: root
@@ -966,8 +963,7 @@ Resources:
               owner: root
               group: root
             /tmp/wazuh_cf_worker.sh:
-              source: !Sub >-
-                https://raw.githubusercontent.com/cacoethes/wazuh-cloudformation/master/wazuh/wazuh_cf_worker.sh
+              source: https://raw.githubusercontent.com/cacoethes/wazuh-cloudformation/master/wazuh/wazuh_cf_worker.sh
               mode: '000700'
               owner: root
               group: root
