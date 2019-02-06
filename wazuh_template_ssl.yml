@@ -127,6 +127,7 @@ Parameters:
     Type: String
   WazuhInstanceType:
     AllowedValues:
+      - m3.large
       - m5.large
       - m5.xlarge
       - m5.2xlarge
@@ -136,6 +137,7 @@ Parameters:
     Type: String
   ElasticInstanceType:
     AllowedValues:
+      - m3.large
       - i3.large
       - i3.xlarge
       - i3.2xlarge
@@ -145,6 +147,7 @@ Parameters:
     Type: String
   KibanaInstanceType:
     AllowedValues:
+      - m3.large
       - m5.large
       - m5.xlarge
       - m5.2xlarge
