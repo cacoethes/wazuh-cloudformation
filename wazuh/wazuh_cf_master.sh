@@ -2,7 +2,7 @@
 # Install Wazuh master instance using Cloudformation template
 # Support for Amazon Linux
 
-set -exf
+#set -exf
 
 ssh_username=$(cat /tmp/wazuh_cf_settings | grep '^SshUsername:' | cut -d' ' -f2)
 ssh_password=$(cat /tmp/wazuh_cf_settings | grep '^SshPassword:' | cut -d' ' -f2)
@@ -123,13 +123,13 @@ cat >> ${manager_config} << EOF
 EOF
 
 # Disabling agent components and cleaning configuration file
-sed -i '/<rootcheck>/,/<\/rootcheck>/d' ${manager_config}
-sed -i '/<wodle name="open-scap">/,/<\/wodle>/d' ${manager_config}
+#sed -i '/<rootcheck>/,/<\/rootcheck>/d' ${manager_config}
+#sed -i '/<wodle name="open-scap">/,/<\/wodle>/d' ${manager_config}
 sed -i '/<wodle name="cis-cat">/,/<\/wodle>/d' ${manager_config}
 sed -i '/<wodle name="osquery">/,/<\/wodle>/d' ${manager_config}
-sed -i '/<wodle name="syscollector">/,/<\/wodle>/d' ${manager_config}
-sed -i '/<syscheck>/,/<\/syscheck>/d' ${manager_config}
-sed -i '/<localfile>/,/<\/localfile>/d' ${manager_config}
+#sed -i '/<wodle name="syscollector">/,/<\/wodle>/d' ${manager_config}
+#sed -i '/<syscheck>/,/<\/syscheck>/d' ${manager_config}
+#sed -i '/<localfile>/,/<\/localfile>/d' ${manager_config}
 sed -i '/<!--.*-->/d' ${manager_config}
 sed -i '/<!--/,/-->/d' ${manager_config}
 sed -i '/^$/d' ${manager_config}
@@ -168,5 +168,5 @@ sed -i "s/YOUR_ELASTIC_SERVER_IP/${elb_logstash}/" /etc/filebeat/filebeat.yml
 service filebeat start
 
 # Disable repositories
-sed -i "s/^enabled=1/enabled=0/" /etc/yum.repos.d/elastic.repo
-sed -i "s/^enabled=1/enabled=0/" /etc/yum.repos.d/wazuh.repo
+#sed -i "s/^enabled=1/enabled=0/" /etc/yum.repos.d/elastic.repo
+#sed -i "s/^enabled=1/enabled=0/" /etc/yum.repos.d/wazuh.repo
