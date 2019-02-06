@@ -93,13 +93,13 @@ cat >> ${manager_config} << EOF
 EOF
 
 # Disabling agent components and cleaning configuration file
-sed -i '/<rootcheck>/,/<\/rootcheck>/d' ${manager_config}
+#sed -i '/<rootcheck>/,/<\/rootcheck>/d' ${manager_config}
 sed -i '/<wodle name="open-scap">/,/<\/wodle>/d' ${manager_config}
 sed -i '/<wodle name="cis-cat">/,/<\/wodle>/d' ${manager_config}
 sed -i '/<wodle name="osquery">/,/<\/wodle>/d' ${manager_config}
-sed -i '/<wodle name="syscollector">/,/<\/wodle>/d' ${manager_config}
-sed -i '/<syscheck>/,/<\/syscheck>/d' ${manager_config}
-sed -i '/<localfile>/,/<\/localfile>/d' ${manager_config}
+#sed -i '/<wodle name="syscollector">/,/<\/wodle>/d' ${manager_config}
+#sed -i '/<syscheck>/,/<\/syscheck>/d' ${manager_config}
+#sed -i '/<localfile>/,/<\/localfile>/d' ${manager_config}
 sed -i '/<auth>/,/<\/auth>/d' ${manager_config}
 sed -i '/<!--.*-->/d' ${manager_config}
 sed -i '/<!--/,/-->/d' ${manager_config}
